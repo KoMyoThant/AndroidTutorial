@@ -50,7 +50,7 @@ public class MainActivity extends ActionBarActivity {
                         //Create intent
                         Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                         intent.putExtra("title", item.getTitle());
-                        intent.putExtra("image", item.getImage());
+                        intent.putExtra("image", item.getImage(getBaseContext()));
 
                         //Start details activity
                         startActivity(intent);

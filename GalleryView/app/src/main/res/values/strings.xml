@@ -11,6 +11,7 @@
         <item>@drawable/image_7</item>
         <item>@drawable/image_8</item>
         <item>@drawable/image_9</item>
+        <item>@drawable/image_10</item>
         <item>@drawable/image_1</item>
         <item>@drawable/image_2</item>
         <item>@drawable/image_3</item>
@@ -20,5 +21,6 @@
         <item>@drawable/image_7</item>
         <item>@drawable/image_8</item>
         <item>@drawable/image_9</item>
+        <item>@drawable/image_10</item>
     </string-array>
 </resources>
