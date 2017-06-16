@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LoginMaterialSample</string>
+    <string name="welcome">Welcome</string>
+    <string name="login">Login</string>
+    <string name="sigup_msg">Don\'t have an account? <b><u>Signup</u></b></string>
+    <string name="agreement">Do you agree to our <b>Terms</b> and <b>Privacy Policies</b>?</string>
+</resources>
