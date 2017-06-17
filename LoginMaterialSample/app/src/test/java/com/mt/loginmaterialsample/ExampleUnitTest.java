@@ -1,4 +1,4 @@
-package mt.loginmaterialsample;
+package com.mt.loginmaterialsample;
 
 import org.junit.Test;
 

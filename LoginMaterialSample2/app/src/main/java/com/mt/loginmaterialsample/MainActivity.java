@@ -1,8 +1,7 @@
-package mt.loginmaterialsample;
+package com.mt.loginmaterialsample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
 

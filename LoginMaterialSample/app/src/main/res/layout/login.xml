@@ -10,7 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="mt.loginmaterialsample.Login">
+    tools:context="com.mt.loginmaterialsample.Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
             android:textAllCaps="true"
             android:textColor="#000"
             android:background="#4CAF50"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="28dp"/>
 
         <TextView
             android:layout_width="match_parent"
