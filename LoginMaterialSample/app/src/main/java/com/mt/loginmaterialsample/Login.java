@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,7 @@ import mt.loginmaterialsample.R;
  * Created by panacea on 6/17/17.
  */
 
-public class Login extends Activity {
+public class Login extends AppCompatActivity {
     private TextInputLayout emailTIL, pwdTIL;
     private String email, pwd;
     private Button loginBtn;
