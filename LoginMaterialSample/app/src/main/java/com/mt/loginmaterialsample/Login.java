@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import mt.loginmaterialsample.R;
@@ -20,6 +21,7 @@ public class Login extends AppCompatActivity {
     private TextInputLayout emailTIL, pwdTIL;
     private String email, pwd;
     private Button loginBtn;
+    private TextView signupLTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,9 @@ public class Login extends AppCompatActivity {
 
         loginBtn = (Button) findViewById(R.id.loginBId);
         login();
+
+        signupLTV = (TextView) findViewById(R.id.signupTVId);
+        signupUI();
     }
 
     protected boolean checkValidate() {
@@ -68,6 +73,16 @@ public class Login extends AppCompatActivity {
                     Intent intent = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(intent);
                 }
+            }
+        });
+    }
+
+    protected void signupUI() {
+        signupLTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), Signup.class);
+                startActivity(intent);
             }
         });
     }

@@ -4,4 +4,6 @@
     <string name="login">Login</string>
     <string name="sigup_msg">Don\'t have an account? <b><u>Signup</u></b></string>
     <string name="agreement">Do you agree to our <b>Terms</b> and <b>Privacy Policies</b>?</string>
+    <string name="create_account">Create Account</string>
+    <string name="login_msg">Already created? <b><u>Login</u></b></string>
 </resources>
