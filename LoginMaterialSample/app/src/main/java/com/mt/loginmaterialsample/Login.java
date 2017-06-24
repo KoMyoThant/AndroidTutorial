@@ -3,13 +3,20 @@ package com.mt.loginmaterialsample;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import mt.loginmaterialsample.R;
 
@@ -23,10 +30,14 @@ public class Login extends AppCompatActivity {
     private Button loginBtn;
     private TextView signupLTV;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+        mAuth = FirebaseAuth.getInstance();
 
         emailTIL = (TextInputLayout) findViewById(R.id.emailTILId);
         pwdTIL = (TextInputLayout) findViewById(R.id.pwdTILId);
@@ -66,12 +77,33 @@ public class Login extends AppCompatActivity {
                 pwd = pwdTIL.getEditText().getText().toString();
 
                 if (!checkValidate()) {
-                    Toast.makeText(getBaseContext(), "Login fail.", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getBaseContext(), "Login fail.", Toast.LENGTH_LONG).show();
                     return;
                 } else {
-                    Toast.makeText(getBaseContext(), "Login success.", Toast.LENGTH_LONG).show();
+                    /*Toast.makeText(getBaseContext(), "Login success.", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
+
+                    mAuth.signInWithEmailAndPassword(email, pwd)
+                            .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    // If sign in fails, display a message to the user. If sign in succeeds
+                                    // the auth state listener will be notified and logic to handle the
+                                    // signed in user can be handled in the listener.
+                                    if (!task.isSuccessful()) {
+                                        // there was an error
+                                        Toast.makeText(Login.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                        Log.w("TAG", "signInWithEmail", task.getException());
+
+                                    } else {
+                                        Intent intent = new Intent(Login.this, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                }
+                            });
                 }
             }
         });
