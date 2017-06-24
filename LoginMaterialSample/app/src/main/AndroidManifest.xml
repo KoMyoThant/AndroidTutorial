@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mt.loginmaterialsample">
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="com.mt.loginmaterialsample.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppBaseTheme">
         <activity
-            android:name="com.mt.loginmaterialsample.Login"
-            android:theme="@style/LoginTheme">
+            android:name="com.mt.loginmaterialsample.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--Login Activity-->
+        <activity
+            android:name="com.mt.loginmaterialsample.Login"
+            android:theme="@style/NoActionBarTheme" />
+
+        <!--Main Activity-->
         <activity android:name="com.mt.loginmaterialsample.MainActivity" />
-        <activity android:name="com.mt.loginmaterialsample.Signup" />
+
+        <!--Signup Activity-->
+        <activity android:name="com.mt.loginmaterialsample.Signup"
+            android:theme="@style/NoActionBarTheme"/>
+
     </application>
 
 </manifest>
